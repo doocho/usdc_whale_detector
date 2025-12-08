@@ -1,0 +1,32 @@
+[package]
+name = "usdc_whale_detector"
+version = "0.1.0"
+edition = "2021"
+description = "USDC whale transfer detector for Ethereum and L2 chains"
+authors = ["Your Name"]
+
+[dependencies]
+# Ethereum client
+alloy = { version = "0.8", features = ["full", "node-bindings"] }
+
+# Async runtime
+tokio = { version = "1.42", features = ["full"] }
+futures = "0.3"
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# Time formatting
+chrono = "0.4"
+
+# Error handling
+eyre = "0.6"
+
+# Colored output
+colored = "2.1"
+

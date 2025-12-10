@@ -5,10 +5,10 @@ use std::str::FromStr;
 /// USDC has 6 decimal places
 pub const USDC_DECIMALS: u8 = 6;
 
-/// Whale threshold: 74,000 USDC (approximately 100 million KRW at 1,350 KRW/USD)
-pub const WHALE_THRESHOLD_USD: u64 = 74_000;
+/// Whale threshold: 1,000,000 USDC
+pub const WHALE_THRESHOLD_USD: u64 = 1_000_000;
 
-/// Whale threshold in raw units (74,000 * 10^6)
+/// Whale threshold in raw units (1,000,000 * 10^6)
 pub const WHALE_THRESHOLD_RAW: u128 = WHALE_THRESHOLD_USD as u128 * 1_000_000;
 
 /// Polling interval in seconds for checking new blocks
@@ -31,8 +31,7 @@ impl ChainConfig {
         Self {
             chain,
             rpc_url: rpc_url.to_string(),
-            usdc_address: Address::from_str(usdc_address)
-                .expect("Invalid USDC address"),
+            usdc_address: Address::from_str(usdc_address).expect("Invalid USDC address"),
         }
     }
 }
@@ -65,4 +64,3 @@ pub fn get_all_chains() -> Vec<ChainConfig> {
 /// keccak256("Transfer(address,address,uint256)")
 pub const TRANSFER_EVENT_SIGNATURE: &str =
     "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef";
-

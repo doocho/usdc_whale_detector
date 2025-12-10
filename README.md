@@ -6,7 +6,7 @@ A Rust program that monitors large USDC transfers in real-time across Ethereum a
 
 - **Multi-chain Support**: Ethereum, Arbitrum, Base
 - **Parallel Monitoring**: Independent monitor running for each chain
-- **Whale Detection**: Detects USDC transfers over $74,000 (approximately 100 million KRW)
+- **Whale Detection**: Detects USDC transfers over $1,000,000
 - **Address Labeling**: Automatic identification of known exchange/protocol addresses
 
 ## Installation & Running
@@ -50,7 +50,7 @@ You can add custom address labels by editing the `data/labels.json` file:
 
 ## Threshold Configuration
 
-The default threshold is 74,000 USDC (approximately 100 million KRW). You can modify it in `src/config.rs`.
+The default threshold is 1,000,000 USDC. You can modify it in `src/config.rs`.
 
 ## License
 
